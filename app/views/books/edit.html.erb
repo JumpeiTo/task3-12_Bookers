@@ -2,7 +2,7 @@
 
 
 <h1>Editing Book</h1>
-
+<!--エラーメッセージ-->
 <% if @book.errors.any? %>
   <%= @book.errors.count %> errors prohibited this book from being saved:
   <ul>
@@ -11,6 +11,7 @@
     <% end %>
   </ul>
 <% end %>
+
 
 <%= form_with model: @book, url:book_path(@book.id), method: :patch do |f| %>
 

@@ -1,5 +1,9 @@
 <!--一覧と新規作成画面のビュー-->
 
+<div>
+    <%= flash[:notice] %>
+</div>
+
 <h1>Books</h1>
 <table>
   <!--項目名-->
@@ -31,7 +35,6 @@
     <% end %>
   </ul>
 <% end %>
-
   
   
 <%= form_with model: @books, url:'/books', method: :post do |f| %>
