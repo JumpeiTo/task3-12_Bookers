@@ -1,14 +1,19 @@
 <!--詳細画面のビュー-->
 
-<div.class=notice>
+<div class="notice">
     <%= flash[:notice] %>
 </div>
 
-<h2>Title:</h2>
-<P><%= @book.title %></P>
+<p class="show">
+    <strong>Title:</strong>
+    <%= @book.title %>
+</P>
 
-<h2>Body:</h2>
-<P><%= @book.body %></P>
+<p class="show">
+    <strong>Body:</strong>
+    <%= @book.body %>
+</P>
 
-<span><%= link_to "Edit", edit_book_path(@book.id) %></span>
-<span><%= link_to "Back", "/books" %></span>
+<a><%= link_to "Edit", edit_book_path(@book.id) %></a>
+<span>|</span>
+<a><%= link_to "Back", "/books" %></a>
