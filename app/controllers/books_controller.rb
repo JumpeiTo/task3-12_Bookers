@@ -1,3 +1,5 @@
+# Booksコントローラー
+
 class BooksController < ApplicationController
   
   #一覧　新規投稿画面
@@ -12,15 +14,26 @@ class BooksController < ApplicationController
     redirect_to book_path(book.id)
   end
 
+  # 詳細画面
   def show
     @book = Book.find(params[:id])
   end
 
+  #編集画面
   def edit
+    @book = Book.find(params[:id])
   end
   
+  # 更新機能
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
+  end
+  
+  # ストロングパラメータ
   private
   def book_params
-    params.permit(:title, :body)
+    params.require(:book).permit(:title, :body)
   end
 end
