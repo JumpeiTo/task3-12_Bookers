@@ -35,17 +35,13 @@ strong {
     font-weight: bold;
 }
 
-.notice {
-    color: green;
-}
-
 td {
     padding-bottom: 7px;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-.text_area,.text_field ,.button{
+.container ,.button{
     margin-bottom: 10px;
 }
 
@@ -65,3 +61,36 @@ a:hover {
     color: #fff;
     background-color: #000;
 }
+
+.error {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.error-title {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0;
+    background-color: #c00;
+    color: #fff;
+}
+
+.error-message {
+    font-size: 12px;
+    list-style: square;
+    margin: 0;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
