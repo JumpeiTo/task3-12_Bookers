@@ -5,14 +5,18 @@ class BooksController < ApplicationController
   #一覧　新規投稿画面
   def index
     @books = Book.all
+    @book = Book.new
   end
   
   #Create Book(保存)ボタン→詳細画面へ
   def create
     @book = Book.new(book_params)
+    
     if @book.save
       redirect_to book_path(@book.id)
+      
     else
+      @books = Book.all
       render :index
     end
   end
@@ -30,8 +34,10 @@ class BooksController < ApplicationController
   # 更新機能
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book.id)
+    
+     book.update(book_params)
+      redirect_to book_path(book.id)
+
   end
   
   #　削除機能
